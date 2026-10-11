@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+
+    <link rel="stylesheet" href="estilo1.css"/>
+  </head>
+  
+<body>
+  
+    <h1>AÑOS 80S</h1>
+     
+    <div>
+        <p>Its 10pm do you know where your children are? </p>
+    
+      <h2>Michael Jackson </h2>  
+        
+       <main>
+     <p class="p2">  ¡Its Spooky Season! Pero Michael Jackson hizo los 80s un interminable "Thriller" que retumba al mencionar su nombre.
+        El Rey del Pop domino los 80 como su propio reino siendo 1983 el año donde se presencio por primera vez el MOONWALK. Luego un año despues fue ganador de 8 GRAMMYS en LA MISMA NOCHE. Y si hablamos de MICHAEL debemos hablar de la gran noche del pop en 1985 en donde reunio a 46 estrellas de la musica para una sola causa, presentar al mundo "We Are The World".</p>   
+
+       <div class="media">
+        <img src="assets/_.jpeg" alt="Michael Jackson y los personajes de Thriller" class="thriller">
+       </div>
+      <img src="assets/conanwolf.gif" alt="Animación de Thriller" class="gif">
+
+      <p class="p3"> Haz click </p>
+      <button class="thriller-cover-button" type="button" aria-label="Reproducir Thriller">
+        <img src="assets/thriller.png" alt="Portada de Thriller" class="thriller-cover">
+      </button>
+      <audio id="thriller-audio" hidden preload="none" src="audio/thriller.mp3"></audio>
+      <script>
+        const coverButton = document.querySelector(".thriller-cover-button");
+        const coverImage = document.querySelector(".thriller-cover");
+        const thrillerAudio = document.querySelector("#thriller-audio");
+
+        coverButton.addEventListener("click", () => {
+          thrillerAudio.play();
+          coverImage.classList.remove("rebote");
+          void coverImage.offsetWidth;
+          coverImage.classList.add("rebote");
+        });
+
+        coverImage.addEventListener("animationend", () => {
+          coverImage.classList.remove("rebote");
+        });
+      </script>
+      <nav class="navegacion-pistas" aria-label="Navegación entre pistas">
+        <a class="boton-volver" href="index.html" aria-label="Volver al inicio" title="Volver al inicio">&larr;</a>
+        <a class="boton-siguiente" href="90.html">Siguiente pista</a>
+      </nav>
+      

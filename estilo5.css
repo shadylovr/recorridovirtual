@@ -1,0 +1,440 @@
+@font-face {
+	font-family: años;
+	src: url("fonts/RadioDaysNF.ttf");
+}
+@font-face {
+  font-family: fotos;
+  src: url("fonts/DtMF\ Font\ -\ @nereangs.ttf");
+}
+@font-face {
+    font-family:radio2;
+    src: url("fonts/Rokiest-Regular.otf ");
+}
+
+body{
+    min-height: 100vh;
+    margin: 0;
+    background-image: url("assets/fondo5.png");
+}
+
+.h {
+    font-family: años;
+	font-weight: 400;
+	font-style: normal;
+	font-size: 2.5cm;
+	text-align: center;
+	margin: 0;
+	color: #f7ed83;
+	
+}
+
+h1 {
+    font-family: radio2, sans-serif;
+  font-weight: 90;
+  font-style: BOLD;
+  
+    
+    font-size: 0.cm;
+    letter-spacing: 1.2px;
+    text-align: left
+    ;
+
+    margin: 120px 24px 0;
+
+    animation-name: cambiarBorde;
+    animation-duration: 6s;
+    animation-iteration-count: infinite;
+}
+h2 {
+    font-family: fotos;
+  font-weight: 550;
+  font-style: normal;
+  color: #faf7f5;
+     
+    font-size: 1.5cm;
+    text-align: center;
+    margin: 0;
+
+    animation-name: cambiarBorde;
+    animation-duration: 6s;
+    animation-iteration-count: infinite;
+}
+
+.decada-2020 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: min(94%, 1100px);
+    margin: 24px auto 48px;
+}
+
+.concho-boton {
+    display: grid;
+    justify-items: center;
+    gap: 12px;
+    width: min(62vw, 340px);
+    min-width: 190px;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    color: #fff;
+    font: 1.1rem radio2, sans-serif;
+    cursor: pointer;
+    transition: transform 220ms ease, filter 220ms ease;
+}
+
+.concho-boton img {
+    display: block;
+    width: 160%;
+    height: auto;
+    max-width: 1000px;
+}
+
+.concho-boton:hover,
+.concho-boton:focus-visible {
+    transform: translateY(-5px) scale(1.100);
+    filter: drop-shadow(0 10px 12px rgb(0 0 0 / 25%));
+}
+
+.concho-boton:focus-visible {
+    outline: 3px solid #fff;
+    outline-offset: 6px;
+}
+
+.estado-audio {
+    min-height: 1.5em;
+    margin: 12px 0 0;
+    color: #fff;
+    font: 1rem radio2, sans-serif;
+    text-align: center;
+}
+
+.galeria-fotos {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: clamp(8px, 2vw, 24px);
+    width: 100%;
+    margin-top: 24px;
+}
+
+.galeria-fotos[hidden] {
+    display: none;
+}
+
+.galeria-fotos img {
+    display: block;
+    width: min(29%, 300px);
+    height: auto;
+    opacity: 0;
+    transform: translateY(20px) rotate(0);
+}
+
+.galeria-fotos.visible img {
+    animation: aparecer-foto 550ms ease-out forwards;
+}
+
+.galeria-fotos.visible img:nth-child(1) {
+    --inclinacion: -5deg;
+    animation-delay: 80ms;
+}
+
+.galeria-fotos.visible img:nth-child(2) {
+    --inclinacion: 3deg;
+    animation-delay: 220ms;
+}
+
+.galeria-fotos.visible img:nth-child(3) {
+    --inclinacion: -2deg;
+    animation-delay: 360ms;
+}
+
+@keyframes aparecer-foto {
+    to {
+        opacity: 1;
+        transform: translateY(0) rotate(var(--inclinacion));
+    }
+}
+
+@media (max-width: 600px) {
+    .galeria-fotos {
+        flex-wrap: wrap;
+        gap: 16px;
+    }
+
+    .galeria-fotos img {
+        width: min(44%, 240px);
+    }
+
+    .galeria-fotos img:last-child {
+        margin: 0 auto;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .concho-boton {
+        transition: none;
+    }
+
+    .galeria-fotos.visible img {
+        animation-duration: 1ms;
+        animation-delay: 0ms;
+    }
+}
+h3{
+    font-family: fotos;
+  font-weight: 550;
+  font-style: normal;
+  color: #e04242;
+     
+    font-size: 3.5cm;
+    text-align: center;
+    margin: 0;
+
+    animation-name: cambiarBorde;
+    animation-duration: 6s;
+    animation-iteration-count: infinite;
+}
+.F1 {
+    margin: 0;
+    font-family: radio2, sans-serif;
+    font-size: clamp(16px, 1.6vw, 23px);
+    line-height: 1.5;
+    letter-spacing: 1.2px;
+}
+
+.fila-bad-bunny {
+    display: grid;
+    grid-template-columns: minmax(0, 0.7fr) minmax(0, 1.4fr) minmax(0, 0.8fr);
+    align-items: center;
+    gap: clamp(20px, 4vw, 48px);
+    width: min(92%, 1500px);
+    margin: 36px auto;
+}
+
+.etiqueta-boton {
+    display: block;
+    width: min(100%, 260px);
+    padding: 0;
+    justify-self: center;
+    border: 0;
+    background: transparent;
+    cursor: pointer;
+    transition: transform 220ms ease;
+}
+
+.etiqueta-boton img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.etiqueta-boton:hover,
+.etiqueta-boton:focus-visible {
+    transform: scale(1.04) rotate(-2deg);
+}
+
+.etiqueta-boton:focus-visible,
+.futbol-enlace:focus-visible,
+.galeria-dialog button:focus-visible {
+    outline: 3px solid #fff;
+    outline-offset: 5px;
+}
+
+.concho2 {
+    display: block;
+    width: min(100%, 420px);
+    height: auto;
+    justify-self: center;
+    animation: flotar-concho 3s ease-in-out infinite;
+}
+
+@keyframes flotar-concho {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-14px);
+    }
+}
+
+.futbol-enlace {
+    display: block;
+    width: min(42vw, 260px);
+    margin: 32px auto;
+    transition: transform 220ms ease;
+}
+
+.futbol-enlace img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.futbol-enlace:hover,
+.futbol-enlace:focus-visible {
+    transform: translateY(-5px) scale(1.04);
+}
+
+.galeria-dialog {
+    width: min(92vw, 900px);
+    max-width: none;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    overflow: visible;
+}
+
+.galeria-dialog::backdrop {
+    background: rgb(0 0 0 / 80%);
+}
+
+.galeria-dialog-contenido {
+    position: relative;
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr) auto;
+    align-items: center;
+    gap: 16px;
+    padding: 48px 16px 16px;
+    border-radius: 12px;
+    background: #1d7aa5;
+}
+
+.galeria-dialog figure {
+    margin: 0;
+    text-align: center;
+}
+
+.galeria-foto {
+    display: block;
+    max-width: 100%;
+    max-height: 75vh;
+    margin: 0 auto;
+    object-fit: contain;
+}
+
+.galeria-dialog .galeria-foto-boton {
+    display: block;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 0;
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+}
+
+.galeria-foto-boton .galeria-foto {
+    cursor: pointer;
+}
+
+.galeria-contador {
+    margin-top: 10px;
+    color: #fff;
+    font: 1rem radio2, sans-serif;
+}
+
+.galeria-dialog button {
+    border: 0;
+    border-radius: 50%;
+    background: #fff;
+    color: #6eace6;
+    font-size: 28px;
+    cursor: pointer;
+}
+
+.galeria-anterior,
+.galeria-siguiente {
+    width: 44px;
+    height: 44px;
+}
+
+.galeria-dialog .galeria-cerrar {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    width: 38px;
+    height: 38px;
+}
+
+@media (max-width: 700px) {
+    .fila-bad-bunny {
+        grid-template-columns: 1fr;
+    }
+
+    .etiqueta-boton {
+        width: min(65%, 260px);
+    }
+
+    .concho2 {
+        width: min(75%, 360px);
+    }
+
+    .galeria-dialog-contenido {
+        gap: 8px;
+        padding: 48px 8px 12px;
+    }
+
+    .galeria-anterior,
+    .galeria-siguiente {
+        width: 36px;
+        height: 36px;
+        font-size: 22px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .concho2,
+    .etiqueta-boton,
+    .futbol-enlace {
+        animation: none;
+        transition: none;
+    }
+}
+h4 {
+    margin: 0;
+    font-family: fotos;
+    font-weight: 550;
+    font-style: normal;
+    color: #fef7f7;
+    font-size: 1.5cm;
+    text-align: center;
+    margin: 0;
+    margin: 36px auto;
+    letter-spacing: 1.2px;
+}
+.F2{
+    font-size: 0.8cm;
+    text-align: center;
+    margin: 0;
+
+    color: #f4e1e1;
+}
+.navegacion-pistas {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: min(85%, 500px);
+  margin: 24px auto;
+}
+
+.boton-volver {
+  color: #fff;
+  font-size: 36px;
+  line-height: 1;
+  text-decoration: none;
+}
+
+.boton-volver:hover,
+.boton-volver:focus-visible {
+  color: #e5e5e5;
+}
+
+.boton-siguiente {
+  padding: 10px 16px;
+  border-radius: 4px;
+  background-color: rgb(245, 95, 95);
+  color: #fff;
+  font-family: años;
+  font-size: 18px;
+  text-decoration: none;
+}

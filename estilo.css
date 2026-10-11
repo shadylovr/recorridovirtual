@@ -1,0 +1,76 @@
+@font-face {
+    font-family:radio;
+    src: url("fonts/Royalacid.ttf");
+}
+@font-face {
+    font-family:radio2;
+    src: url("fonts/Coolvetica\ Rg.otf");
+}
+
+
+
+body{
+   background-color: rgb(0, 0, 0);
+    color: rgba(216, 0, 0, 0.973);
+    
+    animation-name: cambioColor;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+}
+h1 {
+    font-family: radio, sans-serif;
+  font-weight: 550;
+  font-style: normal;
+    background-color: rgb(0, 0, 0);
+    font-size: 2.5cm;
+    text-align: center;
+    margin: 0;
+
+    animation-name: cambiarBorde;
+    animation-duration: 6s;
+    animation-iteration-count: infinite;
+}
+p {
+    color: rgb(137, 2, 6);
+    font-size: 1.0cm;
+    font-family:radio2 ;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+   text-align: center;
+}
+
+.rokola {
+    text-align: center; 
+    width: 40%;
+    height: 90%;
+    border-radius: 10px;
+   display: block;
+  margin: 0 auto;
+  cursor: pointer;
+  animation: latido 0.8s infinite alternate;
+}
+.rokola.rebote {
+    animation: rebote-rokola 700ms ease-out forwards;
+}
+
+@keyframes rebote-rokola {
+    0%, 100% { transform: translateY(0) scale(1); }
+    35% { transform: translateY(-28px) scale(1.04); }
+    60% { transform: translateY(0) scale(0.97); }
+    82% { transform: translateY(-8px) scale(1.01); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .rokola.rebote {
+        animation-duration: 1ms;
+    }
+}
+}
+@keyframes cambiarBorde {
+    0% {border: solid black 3px; font-size: 1em}
+    50% {border: solid rgb(0, 0, 0) 6px; font-size: 2em}
+    100% {border: solid rgba(0, 0, 0, 0.798) 9px; font-size: 4em}
+}
+
+ 

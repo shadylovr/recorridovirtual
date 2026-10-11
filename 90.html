@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<link rel="stylesheet" href="estilo2.css"/>
+</head>
+<body>
+	<h1>AÑOS 90S</h1>
+
+	<p class="pista">Aqui hay una pista haz click en el gingerbreadman y desliza. </p>
+	<button class="cookie-boton" type="button" aria-label="Reproducir pista">
+		<img class="cookie-imagen" src="assets/cookie.png" alt="Galleta de jengibre">
+	</button>
+	<audio id="pista-audio" src="audio/pista.mp3" preload="none" hidden></audio>
+	<script>
+		const cookieButton = document.querySelector(".cookie-boton");
+		const pistaAudio = document.querySelector("#pista-audio");
+
+		cookieButton.addEventListener("click", () => {
+			pistaAudio.currentTime = 0;
+			pistaAudio.play();
+		});
+	</script>
+	<img class="titulo-imagen" src="assets/titulo.png" alt="Mariposa y título de los años 90">
+	<img class="mariah-imagen" src="assets/mariah.jpg" alt="Mariah Carey">
+	<p class="parrafo"> Si Michael Jackson gobierna Halloween cada año, Mariah Carey es la reina de las listas navideñas.</p>
+		<div class="premio-seccion">
+			<img class="premio-imagen" src="assets/premio.jpg" alt="Mariah Carey sosteniendo un premio">
+			<p class="parrafo2"> Mariah Carey fue una de las artistas más exitosas de los años 90, con 14 canciones número 1 en el Billboard Hot 100 durante la década. Fue la primera artista en lograr que sus primeros cinco sencillos llegaran al número 1 y rompió récords con «One Sweet Day», que permaneció 16 semanas consecutivas en la cima de las listas. Además, sus álbumes Music Box y Daydream alcanzaron un enorme éxito comercial, ganó varios premios Grammy y se consolidó como una de las voces más importantes del pop y el R&B. 
+
+			</p>
+		</div>
+	<nav class="navegacion-pistas" aria-label="Navegación entre pistas">
+		<a class="boton-volver" href="80.html" aria-label="Volver a la pista anterior" title="Volver a la pista anterior">&larr;</a>
+		<a class="boton-siguiente" href="2000.html">Siguiente pista</a>
+	</nav>
+</body>
+
+</html>

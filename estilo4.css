@@ -1,0 +1,328 @@
+@font-face {
+	font-family: años;
+	src: url("fonts/RadioDaysNF.ttf");
+}
+@font-face {
+    font-family:taylor;
+    src: url("fonts/Taylor\ Swift\ Handwriting.ttf");
+}
+
+body{
+    min-height: 100vh;
+    margin: 0;
+    background-image: url("assets/fondo3.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color: rgba(252, 252, 252, 0.973);
+
+}
+    h1 {
+	font-family: años;
+	font-weight: 550;
+	font-style: normal;
+	font-size: 2.5cm;
+	text-align: center;
+	margin: 0;
+	color: #ffffff;
+	
+	animation-name: cambiarBorde;
+	animation-duration: 6s;
+	animation-iteration-count: infinite;
+}
+h2 {
+  font-family: taylor;
+  font-weight: 550;
+  font-style: normal;
+  color: #392b20;
+     
+    font-size: 2.5cm;
+    text-align: center;
+    margin: 0;
+
+    animation-name: cambiarBorde;
+    animation-duration: 6s;
+    animation-iteration-count: infinite;
+}
+
+.contenido-2010 {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    align-items: center;
+    gap: clamp(20px, 4vw, 48px);
+    width: min(92%, 1200px);
+    margin: 36px auto;
+}
+
+.t1 {
+    margin: 0;
+    font-size: clamp(16px, 1.6vw, 23px);
+    line-height: 1.5;
+}
+
+.polaroid-galeria {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: clamp(12px, 4vw, 40px);
+    width: 100%;
+    margin: 0;
+}
+
+.polaroid-boton {
+    flex: 1 1 0;
+    min-width: 0;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    cursor: pointer;
+    transition: transform 180ms ease;
+}
+
+.polaroid-boton:first-child {
+    transform: rotate(-5deg);
+}
+
+.polaroid-boton:last-child {
+    transform: rotate(4deg);
+}
+
+.polaroid-boton:hover,
+.polaroid-boton:focus-visible {
+    transform: translateY(-8px) rotate(0) scale(1.04);
+}
+
+.polaroid-boton:focus-visible {
+    outline: 3px solid #fff;
+    outline-offset: 5px;
+}
+
+.polaroid-boton img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+@media (max-width: 700px) {
+    .contenido-2010 {
+        grid-template-columns: 1fr;
+    }
+
+    .polaroid-galeria {
+        width: min(100%, 600px);
+        margin: 0 auto;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .polaroid-boton {
+        transition: none;
+    }
+}
+.t1 {
+  color: #392b20;
+  
+}
+h3 {
+  font-family: taylor;
+  font-weight: 550;
+  font-style: normal;
+  color: #392b20;
+     
+    font-size: 1.0cm;
+    text-align: center;
+    margin: 0;
+
+    animation-name: cambiarBorde;
+    animation-duration: 6s;
+    animation-iteration-count: infinite;
+}
+
+.seccion-serpiente {
+    grid-column: 1 / -1;
+    display: grid;
+    justify-items: center;
+    gap: 26px;
+    margin: 36px auto 0;
+    text-align: center;
+}
+
+.seccion-serpiente h3 {
+    max-width: 700px;
+    font-size: clamp(28px, 4vw, 50px);
+}
+
+.serpiente-boton {
+    width: min(36vw, 400px);
+    min-width: 140px;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    cursor: pointer;
+    transition: transform 240ms ease, filter 240ms ease;
+    animation: revelar-serpiente 650ms ease-out both;
+}
+
+.serpiente-boton img {
+    display: block;
+    width: 100%;
+    height: auto;
+     width: 100%;
+    max-width: 700px;
+}
+
+.serpiente-boton:hover,
+.serpiente-boton:focus-visible {
+    transform: translateY(-6px) scale(1.06) rotate(-3deg);
+    filter: drop-shadow(0 12px 12px rgb(0 0 0 / 30%));
+}
+
+.serpiente-boton:focus-visible,
+.cerrar-video:focus-visible {
+    outline: 3px solid #fff;
+    outline-offset: 5px;
+}
+
+.video-dialog {
+    position: relative;
+    width: min(90vw, 900px);
+    max-width: none;
+    padding: 48px 16px 16px;
+    border: 2px solid #fff;
+    border-radius: 16px;
+    background: #211a25;
+    box-shadow: 0 20px 70px rgb(0 0 0 / 55%);
+    overflow: visible;
+}
+
+.video-dialog[open] {
+    animation: aparecer-video 220ms ease-out both;
+}
+
+.video-dialog::backdrop {
+    background: rgb(0 0 0 / 0%);
+    animation: oscurecer-fondo 220ms ease-out forwards;
+}
+
+.video-dialog.cerrando {
+    animation: cerrar-video 180ms ease-in both;
+}
+
+.video-dialog.cerrando::backdrop {
+    animation: aclarar-fondo 180ms ease-in both;
+}
+
+.cerrar-video {
+    position: absolute;
+    top: 8px;
+    right: 12px;
+    width: 36px;
+    height: 36px;
+    border: 0;
+    border-radius: 50%;
+    background: #fff;
+    color: #211a25;
+    font-size: 28px;
+    line-height: 1;
+    cursor: pointer;
+}
+
+.video-contenedor {
+    aspect-ratio: 16 / 9;
+}
+
+.video-contenedor iframe {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border: 0;
+    border-radius: 8px;
+}
+
+.enlace-youtube {
+    display: block;
+    width: fit-content;
+    margin: 12px auto 0;
+    color: #fff;
+    font-family: años, sans-serif;
+    text-align: center;
+}
+
+@keyframes revelar-serpiente {
+    from {
+        opacity: 0;
+        transform: translateY(24px) scale(0.92);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@keyframes aparecer-video {
+    from {
+        opacity: 0;
+        transform: translateY(18px) scale(0.96);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@keyframes cerrar-video {
+    to {
+        opacity: 0;
+        transform: translateY(12px) scale(0.97);
+    }
+}
+
+@keyframes oscurecer-fondo {
+    to { background: rgb(0 0 0 / 72%); }
+}
+
+@keyframes aclarar-fondo {
+    to { background: rgb(0 0 0 / 0%); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .polaroid-boton,
+    .serpiente-boton,
+    .video-dialog[open],
+    .video-dialog::backdrop,
+    .video-dialog.cerrando,
+    .video-dialog.cerrando::backdrop {
+        animation: none;
+        transition: none;
+    }
+}
+.navegacion-pistas {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: min(85%, 500px);
+  margin: 24px auto;
+}
+
+.boton-volver {
+  color: #fff;
+  font-size: 36px;
+  line-height: 1;
+  text-decoration: none;
+}
+
+.boton-volver:hover,
+.boton-volver:focus-visible {
+  color: #e5e5e5;
+}
+
+.boton-siguiente {
+  padding: 10px 16px;
+  border-radius: 4px;
+  background-color: rgb(184, 208, 226);
+  color: #fff;
+  font-family: años;
+  font-size: 18px;
+  text-decoration: none;
+}

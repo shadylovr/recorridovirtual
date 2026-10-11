@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Años 2000</title>
+	<link rel="stylesheet" href="estilo3.css">
+</head>
+<body>
+<h1>
+	Hey, Upper East Siders, Gossip Girl here. Estamos en los 2000s, gloss, jeans de tiro bajo, MSN y rumores de celebridades. Y aparentemente el rey del pop se ha visto junto a la nueva princesa del pop.No sabes de quien hablo… busca ese iPod que acabas de comprar y toca la pista. 
+
+XOXO, Gossip Girl.
+</h1>
+<div class="escena-2000">
+	<div class="marco-foto">
+		<img class="marco-borde" src="assets/marco.jpg" alt="" aria-hidden="true">
+		<img class="foto-enmarcada" src="assets/foto.jpg" alt="Fotografía de dos artistas">
+	</div>
+	<div class="ipod-columna">
+		<p class="ipod-instruccion">Pulsa <strong>&gt;||</strong> para reproducir la pista.</p>
+		<div class="ipod-reproductor" role="group" aria-label="Reproductor iPod">
+			<img class="ipod-pantalla" src="assets/ipod.jpg" alt="">
+			<div class="ipod-rueda">
+				<span class="ipod-menu" aria-hidden="true">MENU</span>
+				<span class="ipod-anterior" aria-hidden="true">|&lt;</span>
+				<span class="ipod-siguiente" aria-hidden="true">&gt;|</span>
+				<button class="ipod-reproducir" type="button" aria-label="Reproducir Britney Spears" aria-pressed="false">&gt;||</button>
+				<span class="ipod-centro"></span>
+			</div>
+		</div>
+	</div>
+</div>
+<audio id="britney-audio" src="audio/britney.mp3" preload="none" hidden></audio>
+<script>
+	const playButton = document.querySelector(".ipod-reproducir");
+	const britneyAudio = document.querySelector("#britney-audio");
+
+	playButton.addEventListener("click", () => {
+		if (britneyAudio.paused) {
+			britneyAudio.play();
+		} else {
+			britneyAudio.pause();
+		}
+	});
+
+	britneyAudio.addEventListener("play", () => {
+		playButton.classList.add("activo");
+		playButton.setAttribute("aria-label", "Pausar Britney Spears");
+		playButton.setAttribute("aria-pressed", "true");
+	});
+
+	const resetPlayButton = () => {
+		playButton.classList.remove("activo");
+		playButton.setAttribute("aria-label", "Reproducir Britney Spears");
+		playButton.setAttribute("aria-pressed", "false");
+	};
+
+	britneyAudio.addEventListener("pause", resetPlayButton);
+	britneyAudio.addEventListener("ended", resetPlayButton);
+</script>
+<h1 class="titulo-decada">AÑOS 2000S</h1>
+<h1 class="titulo-decada titulo-britney">BRITNEY SPEARS</h1>
+<img src="assets/pink.gif" alt="Animación de Pink" class="pink">
+	<p class="rosa">  Los 2000s tenían una reina indiscutible: la princesa del pop. Con Toxic, Womanizer y Oops!... I Did It Again, dominó las listas, ganó premios y convirtió cada aparición en un acontecimiento. Porque,ella no seguía las tendencias… ella era la tendencia.</p>
+
+<h2> Mira uno de sus momentos mas memorables junto a MADONNA</h2>
+<div class="computer-reproductor">
+	<img class="computer-imagen" src="assets/computer.png" alt="Computadora iMac rosa">
+	<iframe
+		class="computer-video"
+		src="https://www.youtube.com/embed/Jh4KUeKm8fc"
+		title="Momento de Britney Spears junto a Madonna"
+		allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+		referrerpolicy="strict-origin-when-cross-origin"
+		allowfullscreen>
+	</iframe>
+</div>
+<nav class="navegacion-pistas" aria-label="Navegación entre pistas">
+		<a class="boton-volver" href="90.html" aria-label="Volver a la pista anterior" title="Volver a la pista anterior">&larr;</a>
+		<a class="boton-siguiente" href="2010.html">Siguiente pista</a>
+	</nav>
+</body>
+</body>
+
+</html>
+

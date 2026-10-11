@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Años 2010</title>
+	<link rel="stylesheet" href="estilo4.css">
+</head>
+<body>
+    <h1>AÑOS 2010 </h1>
+    <h2>Taylor Swift</h2>
+	<audio id="taylor-audio" src="audio/taylor.mp3" preload="none"></audio>
+	<main class="contenido-2010">
+		<p class="t1"> ¡Welcome to 1989 ! but we are no in the 80s. Una década donde pasó de ser la country girl de Nashville a convertirse en una de las mayores pop stars del mundo. En 2010 lanzó Speak Now, un álbum escrito completamente por ella misma. Luego, en 2014, llegó el iconic 1989, con el que hizo su official transition al pop y nos regaló hits como “Blank Space” y “Shake It Off”. Pero si hablamos de TAYLOR, debemos hablar de 2016, cuando ganó su segundo GRAMMY a Álbum del Año, convirtiéndose en la primera mujer en lograrlo dos veces con álbumes propios. Y para cerrar la decade, en 2019 fue nombrada ARTIST OF THE DECADE en los AMERICAN MUSIC AWARDS. Porque los 2010s tuvieron muchos hits, pero Taylor Swift tuvo toda una ERA.</p>
+		<div class="polaroid-galeria" aria-label="Fotos de Taylor Swift. Haz clic para reproducir su canción.">
+			<button class="polaroid-boton" type="button" aria-label="Reproducir la canción de Taylor Swift desde la primera foto">
+				<img src="assets/polaroid.jpg" alt="Polaroid de Taylor Swift con camiseta lila">
+			</button>
+			<button class="polaroid-boton" type="button" aria-label="Reproducir la canción de Taylor Swift desde la segunda foto">
+				<img src="assets/polaroid1.jpg" alt="Taylor Swift haciendo un corazón con las manos">
+			</button>
+		</div>
+		<section class="seccion-serpiente" aria-labelledby="titulo-serpiente">
+			<h3 id="titulo-serpiente">¡UNA SERPIENTE! Debe tener muchos secretos, haz clic y descúbrelos.</h3>
+			<button class="serpiente-boton" type="button" aria-label="Ver el video de Taylor Swift">
+				<img src="assets/serpiente.png" alt="Serpiente decorativa. Haz clic para ver el video.">
+			</button>
+		</section>
+	</main>
+	<dialog class="video-dialog" aria-label="Video de Taylor Swift">
+		<button class="cerrar-video" type="button" aria-label="Cerrar video">&times;</button>
+		<div class="video-contenedor">
+			<iframe
+				title="Video de Taylor Swift"
+				referrerpolicy="strict-origin-when-cross-origin"
+				allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+				allowfullscreen>
+			</iframe>
+		</div>
+		<a
+			class="enlace-youtube"
+			href="https://youtu.be/3tmd-ClpJxA?si=iyX2BZco1eMoI0cG"
+			target="_blank"
+			rel="noopener noreferrer">
+			¿No carga el video? Deben ser muy oscuros abre aqui
+		</a>
+	</dialog>
+	<script>
+		const taylorAudio = document.querySelector("#taylor-audio");
+		const snakeButton = document.querySelector(".serpiente-boton");
+		const videoDialog = document.querySelector(".video-dialog");
+		const videoFrame = videoDialog.querySelector("iframe");
+		const closeVideoButton = document.querySelector(".cerrar-video");
+
+		document.querySelectorAll(".polaroid-boton").forEach((button) => {
+			button.addEventListener("click", () => {
+				taylorAudio.currentTime = 0;
+				taylorAudio.play();
+			});
+		});
+
+		const closeVideo = () => {
+			videoDialog.classList.add("cerrando");
+			window.setTimeout(() => {
+				videoDialog.close();
+				videoDialog.classList.remove("cerrando");
+				videoFrame.removeAttribute("src");
+			}, 180);
+		};
+
+		snakeButton.addEventListener("click", () => {
+			const videoUrl = new URL("https://www.youtube.com/embed/3tmd-ClpJxA");
+			videoUrl.searchParams.set("autoplay", "1");
+			videoUrl.searchParams.set("rel", "0");
+			if (window.location.origin !== "null") {
+				videoUrl.searchParams.set("origin", window.location.origin);
+			}
+			videoFrame.src = videoUrl.href;
+			videoDialog.showModal();
+		});
+
+		closeVideoButton.addEventListener("click", closeVideo);
+		videoDialog.addEventListener("cancel", (event) => {
+			event.preventDefault();
+			closeVideo();
+		});
+		videoDialog.addEventListener("click", (event) => {
+			if (event.target === videoDialog) {
+				closeVideo();
+			}
+		});
+	</script>
+</body>
+</html>
+
+</div>
+<nav class="navegacion-pistas" aria-label="Navegación entre pistas">
+		<a class="boton-volver" href="2000.html" aria-label="Volver a la pista anterior" title="Volver a la pista anterior">&larr;</a>
+		<a class="boton-siguiente" href="2020.html">Siguiente pista</a>
+	</nav>

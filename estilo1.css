@@ -1,0 +1,209 @@
+@font-face {
+  font-family: años ;
+  src: url("fonts/RadioDaysNF.ttf");
+}
+@font-face {
+  font-family:michael;
+  src: url("fonts/MichaelsThriller-Regular.otf");
+
+}
+@font-face {
+    font-family:radio2;
+    src: url("fonts/Rokiest-Regular.otf ");
+}
+h2 {
+   
+    background: linear-gradient(180deg, #fff6c8 0%, #eac264 45%, #8a5a12 50%, #f3d27a 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+body{
+    background-image: url("assets/0e2a027d23b2a9b6421a4da8694b8a84.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color: rgba(255, 255, 255, 0.973);
+}
+.play {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+h1 {
+  
+   font-family: años;
+  font-weight: 550;
+  font-style: normal;
+     
+    font-size: 2.5cm;
+    text-align: center;
+    margin: 0;
+
+    animation-name: cambiarBorde;
+    animation-duration: 6s;
+    animation-iteration-count: infinite;
+}
+p {
+    color: rgb(237, 234, 151);
+    font-size: 0.7cm;
+     
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  }
+h2 {
+  font-family: michael;
+  font-weight: 550;
+  font-style: normal;
+     
+    font-size: 2.5cm;
+    text-align: center;
+    margin: 0;
+
+    animation-name: cambiarBorde;
+    animation-duration: 6s;
+    animation-iteration-count: infinite;
+}
+main {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  align-items: start;
+  gap: 32px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 24px;
+}
+.media {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 36px;
+  grid-column: 1;
+  grid-row: 1;
+}
+.thriller {
+    display: block;
+    width: 100%;
+    max-width: 700px;
+}
+
+
+  
+ .p2 {
+  color: #fffffe;
+  font-size: 23px;
+  text-align: left;
+  width: 100%;
+  grid-column: 2;
+  margin: 0;
+  line-height:  1.4;
+  letter-spacing: 2.4px;
+  font-family: radio2;
+   
+}
+.gif {
+    display: block;
+    width: 60%;
+    max-width: 500px;
+  grid-column: 1 / -1;
+  justify-self: center;
+  margin: 0;
+
+}
+.thriller-cover-button {
+  grid-column: 1 / -1;
+  justify-self: center;
+  width: 60%;
+  max-width: 500px;
+  padding: 0;
+  border: 0;
+  background: none;
+  cursor: pointer;
+}
+
+.thriller-cover-button:focus-visible {
+  outline: 2px solid firebrick;
+  outline-offset: 4px;
+}
+
+.thriller-cover {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.thriller-cover.rebote {
+  animation: rebote-portada 700ms ease-out;
+}
+
+@keyframes rebote-portada {
+  0%, 100% { transform: translateY(0) scale(1); }
+  35% { transform: translateY(-28px) scale(1.04); }
+  60% { transform: translateY(0) scale(0.97); }
+  82% { transform: translateY(-8px) scale(1.01); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .thriller-cover.rebote {
+    animation-duration: 1ms;
+  }
+}
+
+.p3 {
+  font-size: 2.5cm;
+  text-align: center;
+  width: 60%;
+  max-width: 500px;
+  grid-column: 1 / -1;
+  justify-self: center;
+  margin: 0;
+  color:firebrick
+}
+
+.navegacion-pistas {
+  grid-column: 1 / -1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 60%;
+  max-width: 500px;
+  justify-self: center;
+}
+
+.boton-volver {
+  display: inline-flex;
+  align-items: center;
+  color: rgb(251, 248, 248);
+  font-family: radio2;
+  font-size: 36px;
+  line-height: 1;
+  text-decoration: none;
+}
+
+.boton-volver:hover,
+.boton-volver:focus-visible {
+  color: #ffffff;
+}
+
+.boton-siguiente {
+  padding: 10px 16px;
+  background-color: firebrick;
+  color: #fff;
+  font-family: años;
+  font-size: 18px;
+  text-decoration: none;
+  border-radius: 4px;
+}
+
+.boton-siguiente:hover,
+.boton-siguiente:focus-visible {
+  background-color: #8a0000;
+}
+
+  
+  
+

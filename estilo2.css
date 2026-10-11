@@ -1,0 +1,176 @@
+@font-face {
+	font-family: años;
+	src: url("fonts/RadioDaysNF.ttf");
+}
+@font-face {
+	font-family: p2;
+	src: url("fonts/Coolvetica\ Rg.otf");
+}
+@font-face {
+	font-family: p3;
+	src: url("fonts/Rokiest-Regular.otf");
+}
+
+h1 {
+	font-family: años;
+	font-weight: 550;
+	font-style: normal;
+	font-size: 2.5cm;
+	text-align: center;
+	margin: 0;
+	color: #f4e4cb;
+	filter: drop-shadow(1px 2px 1px rgba(0, 0, 0, 0.75));
+	animation-name: cambiarBorde;
+	animation-duration: 6s;
+	animation-iteration-count: infinite;
+}
+
+body {
+	margin: 0;
+	min-height: 100vh;
+	background-image: url("assets/fondo.jpg");
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+}
+
+.pista {
+	max-width: 800px;
+	margin: 24px auto;
+	font-size: 56px;
+	line-height: 1.5;
+	text-align: center;
+	color: #f9f5ed;
+}
+
+.titulo-imagen {
+	display: block;
+	width: min(70%, 300px);
+	height: auto;
+	margin: 24px auto;
+}
+
+.mariah-imagen {
+	display: block;
+	width: min(85%, 800px);
+	height: auto;
+	margin: 24px auto;
+}
+
+.parrafo{
+	margin: 24px auto;
+	font-size: 44px;
+	text-align: center;
+    font-family:p2;
+	background: linear-gradient(
+		180deg,
+		#fffdf4 0%,
+		#ead9a2 18%,
+		#a78945 36%,
+		#fff7d5 52%,
+		#c3a75f 68%,
+		#fffefa 84%,
+		#e6d49b 100%
+	);
+	-webkit-background-clip: text;
+	background-clip: text;
+	-webkit-text-fill-color: transparent;
+	color: transparent;
+	filter: drop-shadow(1px 1px 1px rgba(0, 0, 0, 0.8));
+}
+
+.parrafo2 {
+	max-width: 900px;
+	margin: 24px auto;
+	padding: 0 16px;
+	color: #090000;
+	font-size: 34px;
+	line-height: 1.5;
+	text-align: center;
+    font-family:p3;
+}
+
+.premio-seccion {
+	display: grid;
+	grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+	align-items: center;
+	gap: 24px;
+	max-width: 1200px;
+	margin: 24px auto;
+	padding: 0 24px;
+}
+
+.premio-imagen {
+	display: block;
+	width: min(100%, 400px);
+	height: auto;
+	margin: 24px 0;
+}
+
+.cookie-boton {
+	display: block;
+	width: min(85%, 500px);
+	margin: 24px auto;
+	padding: 0;
+	border: 0;
+	background: transparent;
+	cursor: pointer;
+}
+
+.cookie-imagen {
+	display: block;
+	width: 100%;
+	height: auto;
+}
+
+.navegacion-pistas {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	width: min(85%, 500px);
+	margin: 24px auto;
+}
+
+.boton-volver {
+	color: #fff;
+	font-size: 36px;
+	line-height: 1;
+	text-decoration: none;
+}
+
+.boton-volver:hover,
+.boton-volver:focus-visible {
+	color: #e5e5e5;
+}
+
+.boton-siguiente {
+	padding: 10px 16px;
+	border-radius: 4px;
+	background-color: rgb(86, 44, 2);
+	color: #fff;
+	font-family: años;
+	font-size: 18px;
+	text-decoration: none;
+}
+
+.boton-siguiente:hover,
+.boton-siguiente:focus-visible {
+	background-color: #634500;
+}
+
+@media (max-width: 700px) {
+	.premio-seccion {
+		grid-template-columns: 1fr;
+	}
+
+	.premio-imagen {
+		width: min(85%, 400px);
+	margin: 0 auto;
+	}
+
+	.parrafo2 {
+		text-align: center;
+	}
+}
+
